@@ -62,9 +62,6 @@ Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(10085);
    Connect OLED_VDD(Vin) to 3.3V DC (5V tolerant)
    Connect OLED_GROUND to common ground
 
-   Connections for the LED output indicator
-   ============
-   Connect LED digital out 13
 
 */
 
