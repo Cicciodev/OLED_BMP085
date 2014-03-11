@@ -103,6 +103,8 @@ void displaySensorDetails(void)
   display.println("");
   display.display();
   delay(3000);
+  display.clearDisplay();   // cleanup the display before leaving 
+  display.display();
 }
 
 
@@ -115,24 +117,28 @@ void setup(void)
 {
   Serial.begin(9600);
  
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
+  /* by default, we'll generate the high voltage from the 3.3v line internally! (neat!) */
   display.begin(SSD1306_SWITCHCAPVCC);
   // init done
+  
+  /* Set up the OLED display initialization characteristics. */
+  display.setCursor(0,0);
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
 
-  /* Display some basic information on this temp/barometer sensor */
+  /* Display basic information on this temp/barometer sensor */
   displaySensorDetails();
 
   /* Initialise the sensor */
   if(!bmp.begin())
   {
     /* There was a problem detecting the BMP085 ... check your connections */
-    display.print("Ooops, no BMP085 detected ... Check your wiring or I2C ADDR!");
+    display.setCursor(0,0);
+    display.println("Ooops, No BMP085 detected....Check your wiring or I2C ADDR!");
+    display.display();
     while(1);
   }  
-    /* text display text. */           
-  display.clearDisplay();   // clears the screen and buffer
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
+  /* Inform user setting up sensor. */           
   display.setCursor(0,0);
   display.println(" ");
   display.println("Setting Up Bosch");
