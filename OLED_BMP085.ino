@@ -19,8 +19,8 @@ Required hardware:
   
 *********************************************************************/
 #include <Wire.h>                
-#include <Adafruit_GFX.h>        /* OLED/LCD Gisplay grapshics libraey */
-#include <Adafruit_SSD1306.h>    /* OLED Graphics dipslay              */
+#include <Adafruit_GFX.h>        /* OLED/LCD Gisplay grapshics library */
+#include <Adafruit_SSD1306.h>    /* OLED Graphics display              */
 #include <Adafruit_Sensor.h>     /* Adafruit's Sensor incl. BMP085/180 */ 
 #include <Adafruit_BMP085_U.h>   /* Adafruit's Sensor incl. BMP085/180 */
 
